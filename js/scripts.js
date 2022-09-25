@@ -135,12 +135,13 @@ function drawEverything() {
   // win screen
   if (showingWinScreen) {
     canvasContext.fillStyle = "white";
+    canvasContext.font = "bold 40px serif";
     if (player1Score >= WINNING_SCORE) {
-      canvasContext.fillText("Left Player Won!", 360, canvas.height / 3);
+      canvasContext.fillText("Left Player Won!", 250, canvas.height / 3);
     } else if (player2Score >= WINNING_SCORE) {
-      canvasContext.fillText("Right Player Won!", 360, canvas.height / 3);
+      canvasContext.fillText("Right Player Won!", 250, canvas.height / 3);
     }
-    canvasContext.fillText("Click to continue", 360, canvas.height / 2);
+    canvasContext.fillText("Click to continue!", 250, canvas.height / 2);
     return;
   }
   // net function
