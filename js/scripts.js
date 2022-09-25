@@ -159,6 +159,7 @@ function drawEverything() {
   // ball
   colorCircle(ballX, ballY, 10, "white");
   // score
+  canvasContext.font = "bold 40px serif";
   canvasContext.fillText(player1Score, 100, 100);
   canvasContext.fillText(player2Score, canvas.width - 100, 100);
 }
