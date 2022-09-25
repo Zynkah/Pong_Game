@@ -141,13 +141,19 @@ function drawEverything() {
     } else if (player2Score >= WINNING_SCORE) {
       canvasContext.fillText("Right Player Won!", 250, canvas.height / 3);
     }
-    canvasContext.fillText("Click to continue!", 250, canvas.height / 2);
+    canvasContext.fillText("Click to Continue!", 250, canvas.height / 2);
     return;
   }
   // net function
   drawNet();
   // left paddle
-  colorRect(0, paddle1Y, PADDLE_THICKNESS, 100, "white");
+  colorRect(
+    0, 
+    paddle1Y, 
+    PADDLE_THICKNESS, 
+    100, 
+    "white"
+  );
   // right paddle
   colorRect(
     canvas.width - PADDLE_THICKNESS,
