@@ -1,21 +1,15 @@
 var canvas;
 var canvasContext;
-
 var ballX = 50;
 var ballY = 50;
-
 var ballSpeedX = 15;
 var ballSpeedY = 4;
-
 var paddle1Y = 250;
 var paddle2Y = 250;
-
 const PADDLE_THICKNESS = 10;
 const PADDLE_HEIGHT = 100;
-
 var player1Score = 0;
 var player2Score = 0;
-
 const WINNING_SCORE = 3;
 var showingWinScreen = false;
 
@@ -44,7 +38,6 @@ function handleMouseClick(evt) {
 window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
-
   // speed of the ball & game board load
   let framesPerSecond = 30;
   setInterval(function () {
@@ -70,7 +63,6 @@ function ballReset() {
   ballX = canvas.width / 2;
   ballY = canvas.height / 2;
 }
-
 // Right paddle AI
 function computerMovement() {
   var paddle2YCenter = paddle2Y + PADDLE_HEIGHT / 2;
@@ -139,16 +131,16 @@ function drawNet() {
 
 function drawEverything() {
   // game board background
-  colorRect(0, 0, canvas.width, canvas.height, "black");
+  colorRect(0, 0, canvas.width, canvas.height, "darkslategrey");
   // win screen
   if (showingWinScreen) {
     canvasContext.fillStyle = "white";
     if (player1Score >= WINNING_SCORE) {
-      canvasContext.fillText("Left Player Won!", 350, 200);
+      canvasContext.fillText("Left Player Won!", 360, canvas.height / 3);
     } else if (player2Score >= WINNING_SCORE) {
-      canvasContext.fillText("Right Player Won!", 350, 200);
+      canvasContext.fillText("Right Player Won!", 360, canvas.height / 3);
     }
-    canvasContext.fillText("click to continue", 350, 500);
+    canvasContext.fillText("Click to continue", 360, canvas.height / 2);
     return;
   }
   // net function
