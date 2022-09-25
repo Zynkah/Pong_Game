@@ -3,7 +3,7 @@ var canvasContext;
 var ballX = 50;
 var ballY = 50;
 var ballSpeedX = 15;
-var ballSpeedY = 4;
+var ballSpeedY = 5;
 var paddle1Y = 250;
 var paddle2Y = 250;
 const PADDLE_THICKNESS = 10;
