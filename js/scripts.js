@@ -10,7 +10,7 @@ const PADDLE_THICKNESS = 10;
 const PADDLE_HEIGHT = 100;
 var player1Score = 0;
 var player2Score = 0;
-const WINNING_SCORE = 3;
+const WINNING_SCORE = 5;
 var showingWinScreen = false;
 
 // paddle movement
@@ -39,7 +39,7 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
   // speed of the ball & game board load
-  let framesPerSecond = 30;
+  let framesPerSecond = 40;
   setInterval(function () {
     moveEverything();
     drawEverything();
@@ -136,24 +136,20 @@ function drawEverything() {
   if (showingWinScreen) {
     canvasContext.fillStyle = "white";
     canvasContext.font = "bold 40px serif";
+    canvasContext.letterSpacing = "2px";
+    canvasContext.fontVariantCaps = "petite-caps";
     if (player1Score >= WINNING_SCORE) {
-      canvasContext.fillText("Left Player Won!", 250, canvas.height / 3);
+      canvasContext.fillText("You Won", canvas.width / 2.5, canvas.height / 3);
     } else if (player2Score >= WINNING_SCORE) {
-      canvasContext.fillText("Right Player Won!", 250, canvas.height / 3);
+      canvasContext.fillText("You Lose", canvas.width / 2.5, canvas.height / 3);
     }
-    canvasContext.fillText("Click to Continue!", 250, canvas.height / 2);
+    canvasContext.fillText("Click to Play Again", 220, canvas.height / 2);
     return;
   }
   // net function
   drawNet();
   // left paddle
-  colorRect(
-    0, 
-    paddle1Y, 
-    PADDLE_THICKNESS, 
-    100, 
-    "white"
-  );
+  colorRect(0, paddle1Y, PADDLE_THICKNESS, 100, "white");
   // right paddle
   colorRect(
     canvas.width - PADDLE_THICKNESS,

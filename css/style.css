@@ -1,4 +1,4 @@
 #gameCanvas {
-    border: 10px solid grey;
-    padding: 2px;
+  border: 15px solid grey;
+  border-radius: 5px;
 }
