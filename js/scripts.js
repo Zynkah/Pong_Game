@@ -6,8 +6,8 @@ var ballSpeedX = 15;
 var ballSpeedY = 5;
 var paddle1Y = 250;
 var paddle2Y = 250;
-const PADDLE_THICKNESS = 10;
-const PADDLE_HEIGHT = 100;
+const PADDLE_THICKNESS = 15;
+const PADDLE_HEIGHT = 125;
 var player1Score = 0;
 var player2Score = 0;
 const WINNING_SCORE = 5;
@@ -143,7 +143,7 @@ function drawEverything() {
     } else if (player2Score >= WINNING_SCORE) {
       canvasContext.fillText("You Lose", canvas.width / 2.5, canvas.height / 3);
     }
-    canvasContext.fillText("Click to Play Again", 220, canvas.height / 2);
+    canvasContext.fillText("Click to Play Again", canvas.width / 3.3, canvas.height / 2);
     return;
   }
   // net function
