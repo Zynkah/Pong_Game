@@ -143,27 +143,31 @@ function drawEverything() {
     } else if (player2Score >= WINNING_SCORE) {
       canvasContext.fillText("You Lose", canvas.width / 2.5, canvas.height / 3);
     }
-    canvasContext.fillText("Click to Play Again", canvas.width / 3.3, canvas.height / 2);
+    canvasContext.fillText(
+      "Click to Play Again",
+      canvas.width / 3.3,
+      canvas.height / 2
+    );
     return;
   }
   // net function
   drawNet();
   // left paddle
-  colorRect(0, paddle1Y, PADDLE_THICKNESS, 100, "white");
+  colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
   // right paddle
   colorRect(
     canvas.width - PADDLE_THICKNESS,
     paddle2Y,
     PADDLE_THICKNESS,
-    100,
+    PADDLE_HEIGHT,
     "white"
   );
   // ball
   colorCircle(ballX, ballY, 10, "white");
   // score
   canvasContext.font = "bold 40px serif";
-  canvasContext.fillText(player1Score, 100, 100);
-  canvasContext.fillText(player2Score, canvas.width - 100, 100);
+  canvasContext.fillText(player1Score, 250, 75);
+  canvasContext.fillText(player2Score, canvas.width - 250, 75);
 }
 
 // ball design
